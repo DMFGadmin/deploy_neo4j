@@ -25,7 +25,7 @@ resource "google_compute_instance" "neo4j-server" {
 
 
   network_interface {
-    subnetwork = "projects/${var.project_id}/regions/${var.region}/subnetworks/${var.subnetwork}"
+    subnetwork = "projects/${var.network_project_id}/regions/${var.region}/subnetworks/${var.subnetwork}"
 
     access_config {
       nat_ip = google_compute_address.neo4j-external-access.address
