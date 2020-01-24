@@ -27,3 +27,7 @@ variable "zone" {
 variable "network_project_id" {
   description  =  "the project that hosts the network"
 }
+
+variable "iap_source_address_cidr" {
+  description  =  "the project that hosts the network"
+}

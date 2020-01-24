@@ -36,3 +36,21 @@ resource "google_compute_instance" "neo4j-server" {
     scopes = ["userinfo-email", "compute-ro", "storage-ro"]
   }
 }
+
+resource "google_compute_firewall" "allow-traffic-fir-iap" {
+  name = "allow-traffic-from-iap"
+  description = "Allow IAP traffic"
+  network =   var.network
+  direction = "INGRESS"
+  project = var.project_id
+  disabled = "false"
+  priority = 1000
+  enable_logging = "false"
+
+  allow {
+    protocol = "tcp"
+  }
+
+  source_ranges = ["${var.iap_source_address_cidr}"]
+  target_tags = ["${var.neo4j_access_source_tags}"]
+}
