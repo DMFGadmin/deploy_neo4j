@@ -1,6 +1,6 @@
 
 variable "project_id" {
-  description = "The project ID to deploy to"
+  description = "The project ID to deploy in to"
 }
 
 variable "region" {
@@ -18,14 +18,6 @@ variable "subnetwork" {
 
 variable "neo4j_access_source_tags" {
   description = "firewall tags to allow access to jenkins server"
-}
-
-variable "source_range1" {
-  description = "source ranges for access to jenkins server"
-}
-
-variable "source_range2" {
-  description = "source ranges for access to jenkins server"
 }
 
 variable "zone" {
