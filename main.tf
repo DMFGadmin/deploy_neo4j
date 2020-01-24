@@ -40,7 +40,7 @@ resource "google_compute_instance" "neo4j-server" {
 resource "google_compute_firewall" "allow-traffic-for-iap" {
   name = "allow-traffic-from-iap"
   description = "Allow IAP traffic"
-  network =   var.network
+  network = var.network
   direction = "INGRESS"
   project = var.project_id
   disabled = "false"
@@ -51,5 +51,8 @@ resource "google_compute_firewall" "allow-traffic-for-iap" {
     protocol = "tcp"
   }
 
-  source_ranges = ["${var.iap_source_address_cidr}"]
-  target_tags = ["${var.neo4j_access_source_tags}"]
+  source_ranges = [
+    "${var.iap_source_address_cidr}"]
+  target_tags = [
+    "${var.neo4j_access_source_tags}"]
+}
