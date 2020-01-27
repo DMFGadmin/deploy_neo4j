@@ -1,19 +1,6 @@
-
-variable "project_id" {
-  description = "The project ID to deploy in to"
-}
-
 variable "region" {
   description = "The region to deploy to"
   default     = "us-central1"
-}
-
-variable "network" {
-  description = "The GCP network to launch the instance in"
-}
-
-variable "subnetwork" {
-  description = "The GCP subnetwork to launch the instance in"
 }
 
 variable "neo4j_access_source_tags" {
@@ -22,12 +9,4 @@ variable "neo4j_access_source_tags" {
 
 variable "zone" {
   description = "what zone should this server be deployed in?"
-}
-
-variable "network_project_id" {
-  description  =  "the project that hosts the network"
-}
-
-variable "iap_source_address_cidr" {
-  description  =  "the project that hosts the network"
 }
