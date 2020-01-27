@@ -9,7 +9,7 @@ data "terraform_remote_state" "project-and-networks" {
 }
 
 resource "google_compute_address" "neo4j-external-access" {
-  name    =  "jenkins-external-access-address"
+  name    =  "neo4j-external-access-address"
   address_type = "EXTERNAL"
   description = "Used to access a neo4j instance remotely"
   network_tier = "PREMIUM"
